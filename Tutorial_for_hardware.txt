@@ -1,0 +1,71 @@
+
+A. Sambungan Modul LoRa Ra-02 ke ESP32 (8 Wayar)
+
+• Pin 3.3V (LoRa) → sambung ke pin 3V3 (atau 3.3V) pada ESP32. (Amaran: Jangan sambung ke pin 5V atau VIN kerana modul Ra-02 akan rosak).
+• Pin GND (LoRa) → sambung ke pin GND pada ESP32.
+• Pin NSS (LoRa) → sambung ke pin D5 (atau G5 / GPIO 5) pada ESP32.
+• Pin SCK (LoRa) → sambung ke pin D18 (atau G18 / GPIO 18) pada ESP32.
+• Pin MOSI (LoRa) → sambung ke pin D23 (atau G23 / GPIO 23) pada ESP32.
+• Pin MISO (LoRa) → sambung ke pin D19 (atau G19 / GPIO 19) pada ESP32.
+• Pin RST (LoRa) → sambung ke pin D14 (atau G14 / GPIO 14) pada ESP32.
+• Pin DIO0 (LoRa) → sambung ke pin D2 (atau G2 / GPIO 2) pada ESP32.
+
+B. Sambungan Skrin OLED 0.96" I2C ke ESP32 (4 Wayar)
+
+• Pin VCC (OLED) → sambung ke pin 3V3 pada ESP32. (Oleh kerana pin 3V3 pada ESP32 biasanya hanya ada satu, cucuk pin 3V3 ESP32 ke jalur positif + pada breadboard supaya anda boleh berkongsi kuasa 3.3V untuk LoRa dan OLED sekali gus).
+• Pin GND (OLED) → sambung ke jalur negatif GND pada breadboard.
+• Pin SDA (OLED) → sambung ke pin D21 (atau G21 / GPIO 21) pada ESP32.
+• Pin SCL (OLED) → sambung ke pin D22 (atau G22 / GPIO 22) pada ESP32.
+
+C. Sambungan Butang Tekan Kod Morse ke ESP32 (2 Wayar)
+
+• Kaki 1 Butang → sambung ke pin D4 (atau G4 / GPIO 4) pada ESP32.
+• Kaki 2 Butang (pilih kaki yang bertentangan secara menyerong) → sambung ke jalur GND pada breadboard.
+• (Nota: Tidak perlu pasang perintang tambahan kerana kod Arduino kita sudah mengaktifkan perintang dalaman INPUT_PULLUP).
+
+D. Sambungan Active Buzzer 3.3V ke ESP32 (2 Wayar)
+
+• Kaki Panjang (+) Buzzer → sambung ke pin D15 (atau G15 / GPIO 15) pada ESP32.
+• Kaki Pendek (-) Buzzer → sambung ke jalur GND pada breadboard.
+
+OUTPUT:
+==============================================================================
+1.masukkan mesej
+
+MORSE (CONVERT):
+--- 
+--------------------
+HURUF:
+O
+--------------------
+IN: Tiada mesej
+=================================================================================
+2.tekan huruf k-2 (tunggu 0.7sec untuk huruf selanjutnya)
+
+MORSE (CONVERT):
+--- -.- 
+--------------------
+HURUF:
+OK
+--------------------
+IN: Tiada mesej
+==================================================================================
+3.Buzzer pada unit rakan berbunyi beep-beep dua kali dan skrinnya terus memaparkan:
+
+MORSE (BARU):
+
+--------------------
+HURUF:
+
+--------------------
+IN: OK
+==================================================================================
+
+
+
+
+
+
+
+
+
